@@ -1,0 +1,26 @@
+/* conteneur flexible */
+.side-by-side {
+    display: flex;
+    width: 100%;
+    gap: 1rem;           /* espace entre les images */
+    overflow: hidden;
+  }
+  
+  /* chaque image prend la moitié de la largeur */
+  .side-image {
+    width: 50%;
+    object-fit: cover;   /* recadre sans déformer */
+    height: auto;
+    border-radius: 8px;  /* si tu veux des coins arrondis */
+  }
+  
+  /* bascule en colonne sur petits écrans */
+  @media screen and (max-width: 768px) {
+    .side-by-side {
+      flex-direction: column;
+    }
+    .side-image {
+      width: 100%;
+    }
+  }
+  

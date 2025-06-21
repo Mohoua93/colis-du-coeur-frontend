@@ -1,0 +1,165 @@
+/* home.css */
+
+/* Global styles */
+.home-page {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #bb3f76;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center; /* centrer les éléments flexibles (notamment le logo) */
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.burger-menu {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  padding: 0;
+}
+
+.burger-menu .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+.logo {
+  height: 80px; /* centré par flex */
+}
+
+/* Nav items panel sliding from left to right */
+.nav-items {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 220px;
+  height: calc(100vh - 60px);
+  background-color: #efcc60;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  z-index: 1001;
+}
+
+.nav-items.open {
+  transform: translateX(0);
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: #333;
+  margin: 12px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-items a:hover {
+  color: #bb3f76;
+}
+
+/* Hero image */
+.hero-image .full-width-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Actions section */
+.actions-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.actions-text {
+  color: #efcc60;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Image pair section */
+.image-pair {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.half-image {
+  width: 50%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .half-image {
+    width: 100%;
+  }
+}
+
+/* Donation section */
+.donation-section {
+  color: #bb3f76;
+  padding: 60px 20px;
+  background-color: #efcc60;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.donation-text {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.donation-button {
+  background-color: #bb3f76;
+  color: #efcc60;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.donation-button:hover {
+  background-color: #d21268;
+}
+
+
+
+
+  
