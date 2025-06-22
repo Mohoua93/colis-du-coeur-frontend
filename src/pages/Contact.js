@@ -6,6 +6,9 @@ import '../styles/contact.css';
 // Import du logo
 import logo from '../assets/logo.png';
 
+// Base URL de l'API (définie via REACT_APP_API_BASE_URL dans CRA)
+const API_BASE = process.env.REACT_APP_API_BASE_URL;
+
 export default function NavbarWithContact() {
   // State pour le menu burger
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,7 +39,7 @@ export default function NavbarWithContact() {
     e.preventDefault();
     setStatus('sending');
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(`${API_BASE}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -75,7 +78,7 @@ export default function NavbarWithContact() {
           <Link to="/maraudes" onClick={handleLinkClick}>Maraudes</Link>
           <Link to="/colis-alimentaires" onClick={handleLinkClick}>Colis Alimentaires</Link>
           <Link to="/projets-nationaux" onClick={handleLinkClick}>Projets Nationaux</Link>
-          <Link to="/projets-internationaux" onClick={handleLinkClick}>Projets Internationnels</Link>
+          <Link to="/projets-internationaux" onClick={handleLinkClick}>Projets Internationaux</Link>
           <Link to="/about" onClick={handleLinkClick}>À propos</Link>
           <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
         </div>
@@ -136,6 +139,3 @@ export default function NavbarWithContact() {
     </>
   );
 }
-
-
-
