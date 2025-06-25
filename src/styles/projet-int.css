@@ -69,6 +69,15 @@
 
 /* Responsive pour petits écrans */
 @media (max-width: 600px) {
+
+  .chevron.left {
+    left: -1rem;                /* Ajuste la position pour les petits écrans */
+  }
+
+  .chevron.right {
+    right: -1rem;               /* Ajuste la position pour les petits écrans */
+  }
+  
   .description-section {
     padding: 1.5rem 0.5rem;
   }
