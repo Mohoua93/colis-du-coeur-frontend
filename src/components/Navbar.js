@@ -1,33 +1,30 @@
-// src/components/Navbar.js
+// src/components/Navbar.jsx
 import React, { useState } from 'react';
-import '../styles/navbar.css'; // Assurez-vous que le chemin est correct
+import '../styles/navbar.css'; // Import des styles de la navbar
 import logo from '../assets/logo.png';
 
-function Navbar() {
+export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const toggle = () => setOpen(!open);
+  const close  = () => setOpen(false);
 
   return (
     <nav className="navbar">
-      {/* Menu burger à gauche */}
-      <div className={`menu ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
-        <div className="bar bar1"></div>
-        <div className="bar bar2"></div>
-        <div className="bar bar3"></div>
+      <div className={`menu ${open ? 'open' : ''}`} onClick={toggle}>
+        <div className="bar bar1" />
+        <div className="bar bar2" />
+        <div className="bar bar3" />
       </div>
-
-      {/* Logo centré */}
       <div className="logo">
         <img src={logo} alt="Logo Colis du Cœur" />
       </div>
-
-      {/* Liens de navigation qui s'ouvrent depuis la droite */}
-      <div className={`nav-links ${open ? 'open' : ''}`}>  
-        <a href="/">Accueil</a>
-        <a href="/about">À propos</a>
-        <a href="/don">Faire un don</a>
+      <div className={`nav-links ${open ? 'open' : ''}`}>
+        <a href="/"      onClick={close}>Accueil</a>
+        <a href="/about" onClick={close}>À propos</a>
+        <a href="/don"   onClick={close}>Faire un don</a>
       </div>
     </nav>
   );
 }
 
-export default Navbar;
+

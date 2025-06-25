@@ -1,0 +1,126 @@
+.slider-header {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    background-color: #f4f4f4;
+  }
+  
+  .slider-container {
+    height: 800px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: white;
+  }
+  
+  .chevron {
+    position: absolute;
+    background-color: transparent; /* plus de fond blanc */
+    border: none;
+    padding: 1.5rem;               /* conserve un hit-area confortable */
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+  .chevron.left {
+    left: 2rem;
+  }
+  
+  .chevron.right {
+    right: 2rem;
+  }
+  
+  /* Si tu as un état hover/active avec un fond, tu peux aussi le retirer : */
+  .chevron:hover,
+  .chevron:active {
+    background-color: transparent;
+  }
+  
+/* Section de description */
+.description-section {
+  padding: 1rem;           /* Espacement intérieur */
+  background-color: #d21268; /* Couleur de fond */
+  text-align: center;           /* Centre le texte */
+}
+
+.description-section h1 {
+  font-size: 2.5rem;            /* Taille du titre */
+  font-weight: 700;             /* Gras */
+  color: #efcc60;               /* Couleur sombre */
+}
+
+.description-section p {
+  font-size: 1.125rem;          /* Taille du paragraphe */
+  line-height: 1.6;             /* Hauteur de ligne pour lisibilité */
+  color: #efcc60;                  /* Gris moyen */
+  margin: 0 auto;               /* Centre le paragraphe si on fixe une largeur */
+  max-width: 600px;             /* Limite la largeur du texte */
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 600px) {
+  .description-section {
+    padding: 1.5rem 0.5rem;
+  }
+  .description-section h1 {
+    font-size: 2rem;
+  }
+  .description-section p {
+    font-size: 1rem;
+  }
+}
+
+  .projet-content {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Section vidéo */
+.video-section {
+  padding: 2rem 1rem;            /* Espacement autour */
+  max-width: 900px;              /* Limite la largeur pour les écrans larges */
+  margin: 3rem auto;             /* Centre la section avec marge verticale */
+  text-align: center;            /* Centre le titre et la vidéo */
+}
+
+.video-section h2 {
+  font-size: 1.75rem;            /* Taille du titre */
+  margin-bottom: 1rem;           /* Espacement sous le titre */
+  font-weight: 600;              /* Un peu de graisse */
+  color: #333;                   /* Couleur du texte */
+}
+
+/* Lecteur vidéo */
+.project-video {
+  width: 100%;                   /* Prend toute la largeur du conteneur */
+  height: auto;                  /* Garde les proportions */
+  border-radius: 8px;            /* Coins arrondis */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Légère ombre portée */
+}
+
+/* Responsive : garde un ratio 16/9 */
+.project-video::-webkit-media-controls-enclosure {
+  aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 600px) {
+  .video-section {
+    padding: 1.5rem 0.5rem;
+  }
+  .video-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+  

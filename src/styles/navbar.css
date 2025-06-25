@@ -1,83 +1,76 @@
 /* src/components/Navbar.css */
 .navbar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 60px;
-    background: #fff;
-  }
-  
-  .menu {
-    position: absolute;
-    left: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 25px;
-    height: 20px;
-    cursor: pointer;
-    z-index: 20;
-  }
-  
-  .bar {
-    width: 100%;
-    height: 3px;
-    background-color: #333;
-    transition: all 0.3s ease;
-  }
-  
-  .menu.open .bar1 {
-    transform: rotate(45deg) translateY(8px);
-  }
-  .menu.open .bar2 {
-    opacity: 0;
-  }
-  .menu.open .bar3 {
-    transform: rotate(-45deg) translateY(-8px);
-  }
-  
-  .logo {
-    margin: 0 auto;
-  }
-  
-  .logo img {
-    height: 80px;
-  }
-  
-  .nav-links {
-    position: absolute;
-    top: 60px;
-    right: -220px;
-    width: 200px;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    transition: right 0.3s ease;
-    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-  }
-  
-  .nav-links.open {
-    right: 0;
-  }
-  
-  .nav-links a {
-    padding: 1rem;
-    text-decoration: none;
-    color: #333;
-    border-bottom: 1px solid #eaeaea;
-  }
-  
-  .nav-links a:last-child {
-    border-bottom: none;
-  }
-  
-  /* Responsive */
-  @media screen and (min-width: 768px) {
-    .menu, .nav-links {
-      display: none;
-    }
-    .navbar {
-      justify-content: center;
-    }
-  }
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background: #fff;
+  padding: 0 1rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s;
+}
+
+.menu.open .bar1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu.open .bar2 {
+  opacity: 0;
+}
+.menu.open .bar3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 200px;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: right 0.3s;
+  box-shadow: -2px 0 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.nav-links.open {
+  right: 0;
+}
+
+.nav-links a {
+  padding: 1rem;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eaeaea;
+}
+
