@@ -49,22 +49,32 @@
 /* Section de description */
 .description-section {
   padding: 1rem;           /* Espacement intérieur */
-  background-color: #d21268; /* Couleur de fond */
+  background-color: #ff0173d9; /* Couleur de fond */
   text-align: center;           /* Centre le texte */
 }
 
 .description-section h1 {
   font-size: 2.5rem;            /* Taille du titre */
   font-weight: 700;             /* Gras */
-  color: #efcc60;               /* Couleur sombre */
+  color: #fbff67;               /* Couleur sombre */
 }
 
 .description-section p {
   font-size: 1.125rem;          /* Taille du paragraphe */
   line-height: 1.6;             /* Hauteur de ligne pour lisibilité */
-  color: #efcc60;                  /* Gris moyen */
+  color: #fbff67;                  /* Gris moyen */
   margin: 0 auto;               /* Centre le paragraphe si on fixe une largeur */
-  max-width: 600px;             /* Limite la largeur du texte */
+  max-width: 600px;
+}
+
+.section-p {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: auto;
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 /* Responsive pour petits écrans */

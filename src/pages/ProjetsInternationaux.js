@@ -101,15 +101,32 @@ export default function ProjetInternationaux() {
       <main className="projets-content">
         {/* Section description pour faciliter la maintenance */}
         <section className="description-section">
-          <h1>Projets Internationaux</h1>
+          <h1>🌟 Ensemble, nourrissons l'espoir ! 🌟</h1>
+          <div className='section-p'>
           <p>
-            Découvrez comment Colis du Cœur agit à l’international pour apporter aide et espoir aux communautés démunies.
+            Depuis 2022, Les Colis du Cœur est engagé chaque mois dans une mission essentielle : distribuer des repas au Bangladesh 🇧🇩 pour celles et ceux qui en ont le plus besoin. Chaque jour, nous apportons notre aide à 12 orphelinats, offrant chaleur et réconfort à des centaines d'enfants.
           </p>
+          <p>
+            Grâce à cette mobilisation, nous atteigons aujourd'hui une moyenne de 1100 repas distribués chaque mois. C'est une victoire collective mais aaussi un combat quotidien.
+          </p>
+          <p>
+            👉 Ce combat, nous ne pouvons pas le mener seuls.
+          </p>
+          <p>
+            C'est pourquoi nous faisons appel à vous: ➡️ Particulier, entreprise, donatrices, donateurs, partenaires solidaires... Chaque geste, chaaque contribution fait une réelle différence.
+          </p>
+          <p>
+            💛 Soutenir les Colis du Cœur, c'est nourrir bien plus que des ventres. C'est nourrir l'espoir, la dignité et l'avenir de ces enfants.
+          </p>
+          <p>
+            Ensemble, faisons en sorte que personne ne soit laissé de côté. 🙏 Rejoignez le mouvement.
+          </p>
+          </div>
         </section>
 
         {/* Section vidéo */}
         <section className="video-section">
-          <h2>Distribution de repas au Bangladesh</h2>
+          <h2>Distribution de repas au Bengladesh</h2>
           <video
             className="project-video"
             controls
