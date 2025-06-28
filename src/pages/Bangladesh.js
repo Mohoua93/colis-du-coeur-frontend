@@ -114,7 +114,25 @@ export default function Bangladesh() {
         <section className="description-section">
           <h1>🌟 Ensemble, nourrissons l'espoir ! 🌟</h1>
           <div className="section-p">
-            {/* … ton texte … */}
+            <p>
+            Depuis 2022, Les Colis du Cœur est engagé chaque mois dans une mission essentielle : distribuer des repas au Bangladesh 🇧🇩 pour celles et ceux qui en ont le plus besoin. Chaque jour, nous apportons notre aide à 12 orphelinats, offrant chaleur et réconfort à des centaines d’enfants.
+            </p>
+            <p>
+            Grâce à cette mobilisation, nous atteignons aujourd’hui une moyenne de 1 100 repas distribués chaque mois. C’est une victoire collective, mais aussi un combat quotidien.
+            </p>
+            <p>
+            👉 Ce combat, nous ne pouvons pas le mener seuls. Les besoins sont grands, les ressources limitées.
+            </p>
+            <p>
+            C’est pourquoi nous faisons appel à vous : ➡️ Particuliers, entreprises, donateurs, donatrices, partenaires solidaires… Chaque geste, chaque contribution fait une réelle différence.
+            </p>
+            <p>
+            💛 Soutenir Les Colis du Cœur, c’est nourrir bien plus que des ventres. C’est nourrir l’espoir, la dignité et l’avenir de ces enfants.
+            </p>
+            <p>
+            Ensemble, faisons en sorte que personne ne soit laissé de côté.
+            🙏 Rejoignez le mouvement.
+            </p>
           </div>
         </section>
 
@@ -141,15 +159,17 @@ export default function Bangladesh() {
 
         {/* Deuxième section description */}
         <section className="description-section">
-          <h2>Votre nouveau titre</h2>
+          <h1>🌟 Iftar Bangladesh 🌟</h1>
           <div className="section-p">
-            {/* … ton texte … */}
+            <p>
+            Chaque année, pendant le mois sacré du Ramadan, nous organisons des distributions de repas pour les personnes dans le besoin. Ces moments de partage et de solidarité sont essentiels pour apporter un peu de réconfort à ceux qui traversent des périodes difficiles.
+            </p>
           </div>
         </section>
 
         {/* Deuxième vidéo */}
         <section className="video-section">
-          <h2>Votre nouvelle vidéo</h2>
+          <h2>Vidéo Iftar</h2>
           <video className="project-video" controls preload="metadata">
             <source src={iftarVideo} type="video/mp4" />
           </video>
