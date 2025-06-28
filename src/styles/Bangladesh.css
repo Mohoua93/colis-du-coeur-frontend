@@ -177,13 +177,12 @@
     height: auto;       /* image en full-width, ratio conservé */
     object-fit: cover;
   }
-  /* On peut réorienter la flexbox en colonne si besoin */
   .slider-container {
     flex-direction: column;
   }
-  /* Éventuellement masquer les flèches pour forcer le swipe */
+  /* Sur mobile, on peut encore afficher les chevrons (ou les réduire) */
   .chevron {
-    display: none;
+    display: block;     /* on ne les cache plus */
+    padding: 0.5rem;    /* on réduit juste un peu le hit-area */
   }
 }
-  
