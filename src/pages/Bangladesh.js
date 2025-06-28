@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import '../styles/navbar.css';
-import '../styles/projet-int.css';
+import '../styles/Bangladesh.css';
 import logo from '../assets/logo.png';
 import distribAlim1 from '../assets/distribAlim1.jpeg';
 import distribAlim2 from '../assets/distribAlim2.jpeg';

@@ -141,4 +141,49 @@
   }
 }
 
+/* ==== RESPONSIVE SLIDES ==== */
+
+/* À partir de 1024px, limite la hauteur pour ne pas écraser l’image */
+@media (max-width: 1024px) {
+  .slider-header {
+    height: 600px;
+  }
+  .slider-container {
+    height: 600px;
+  }
+}
+
+/* Tablettes / petits ordinateurs */
+@media (max-width: 768px) {
+  .slider-header,
+  .slider-container {
+    height: 400px;      /* réduit la hauteur pour tenir sur l’écran */
+  }
+  .slider-image {
+    height: 100%;
+  }
+  .chevron {
+    padding: 1rem;      /* allège un peu les hit-areas */
+  }
+}
+
+/* Mobiles et très petits écrans */
+@media (max-width: 480px) {
+  .slider-header,
+  .slider-container {
+    height: auto;       /* laisse la hauteur s’adapter au contenu */
+  }
+  .slider-image {
+    height: auto;       /* image en full-width, ratio conservé */
+    object-fit: cover;
+  }
+  /* On peut réorienter la flexbox en colonne si besoin */
+  .slider-container {
+    flex-direction: column;
+  }
+  /* Éventuellement masquer les flèches pour forcer le swipe */
+  .chevron {
+    display: none;
+  }
+}
   
