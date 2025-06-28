@@ -83,6 +83,39 @@
   color: #bb3f76;
 }
 
+/* Toggle et flèche */
+.submenu-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.submenu-toggle .arrow {
+  transition: transform 0.3s ease;
+}
+.submenu-toggle .arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Animation collapse */
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.submenu.open {
+  max-height: 500px; /* ajuster selon le contenu */
+}
+
+/* Liens du sous-menu */
+.submenu a {
+  display: block;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+}
+
 /* Hero image */
 .hero-image .full-width-image {
   width: 100%;

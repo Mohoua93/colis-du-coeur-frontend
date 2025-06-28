@@ -10,21 +10,32 @@ import imgDon2 from '../assets/img-don2.jpg';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(false);
 
   // Fermer le menu quand on clique en dehors
   useEffect(() => {
     const handleClickOutside = () => {
       if (menuOpen) setMenuOpen(false);
+      if (submenuOpen) setSubmenuOpen(false);
     };
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
-  }, [menuOpen]);
+  }, [menuOpen, submenuOpen]);
 
   // Empêcher la propagation du clic sur la navbar
   const stopPropagation = (e) => e.stopPropagation();
 
-  // Ferme le menu et empêche la propagation
-  const handleLinkClick = () => setMenuOpen(false);
+  // Ferme le menu et le sous-menu
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+    setSubmenuOpen(false);
+  };
+
+  // Toggle sous-menu
+  const toggleSubmenu = (e) => {
+    e.stopPropagation();
+    setSubmenuOpen((open) => !open);
+  };
 
   return (
     <div className="home-page">
@@ -51,7 +62,19 @@ export default function Home() {
           <Link to="/maraudes" onClick={handleLinkClick}>Maraudes</Link>
           <Link to="/colis-alimentaires" onClick={handleLinkClick}>Colis Alimentaires</Link>
           <Link to="/projets-nationaux" onClick={handleLinkClick}>Projets Nationaux</Link>
-          <Link to="/projets-internationaux" onClick={handleLinkClick}>Projets Internationaux</Link>
+
+          {/* Projets Internationaux avec sous-menu */}
+          <div className="nav-item submenu-toggle" onClick={toggleSubmenu}>
+            <span>Projets Internationaux</span>
+            <span className={`arrow ${submenuOpen ? 'open' : ''}`}>▾</span>
+          </div>
+          <div className={`submenu ${submenuOpen ? 'open' : ''}`} onClick={stopPropagation}>
+            <Link to="/bengladesh" onClick={handleLinkClick}>Bengladesh</Link>
+            <Link to="/projets-internationaux/afrique" onClick={handleLinkClick}>Afrique</Link>
+            <Link to="/projets-internationaux/ameriques" onClick={handleLinkClick}>Amériques</Link>
+            {/* Ajoutez d'autres sous-liens si nécessaire */}
+          </div>
+
           <Link to="/about" onClick={handleLinkClick}>À propos</Link>
           <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
         </div>
@@ -105,7 +128,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
-
