@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/home.css';
 
@@ -11,16 +11,20 @@ import imgDon2 from '../assets/img-don2.jpg';
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
+  const navRef = useRef(null);
 
-  // Fermer le menu quand on clique en dehors
+  // Fermer le menu et sous-menu quand on clique en dehors
+  const handleClickOutside = useCallback((e) => {
+    if (navRef.current && !navRef.current.contains(e.target)) {
+      setMenuOpen(false);
+      setSubmenuOpen(false);
+    }
+  }, []);
+
   useEffect(() => {
-    const handleClickOutside = () => {
-      if (menuOpen) setMenuOpen(false);
-      if (submenuOpen) setSubmenuOpen(false);
-    };
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
-  }, [menuOpen, submenuOpen]);
+  }, [handleClickOutside]);
 
   // Empêcher la propagation du clic sur la navbar
   const stopPropagation = (e) => e.stopPropagation();
@@ -31,20 +35,20 @@ export default function Home() {
     setSubmenuOpen(false);
   };
 
-  // Toggle sous-menu
+  // Toggle sous-menu Projets Internationaux
   const toggleSubmenu = (e) => {
     e.stopPropagation();
-    setSubmenuOpen((open) => !open);
+    setSubmenuOpen((o) => !o);
   };
 
   return (
     <div className="home-page">
       {/* Navbar */}
-      <nav className="navbar" onClick={stopPropagation}>
+      <nav className="navbar" ref={navRef} onClick={stopPropagation}>
         <button
           className="burger-menu"
-          aria-label="Toggle menu"
-          onClick={(e) => { e.stopPropagation(); setMenuOpen(!menuOpen); }}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          onClick={(e) => { e.stopPropagation(); setMenuOpen((o) => !o); }}
         >
           <span className="bar" />
           <span className="bar" />
@@ -52,7 +56,7 @@ export default function Home() {
         </button>
 
         {/* Logo cliquable renvoyant à la page d'accueil */}
-        <Link to="/" onClick={() => { stopPropagation(); handleLinkClick(); }}>
+        <Link to="/" onClick={(e) => { stopPropagation(e); handleLinkClick(); }}>
           <img src={logo} alt="Logo Colis du Cœur" className="logo" />
         </Link>
 
@@ -63,16 +67,15 @@ export default function Home() {
           <Link to="/colis-alimentaires" onClick={handleLinkClick}>Colis Alimentaires</Link>
           <Link to="/projets-nationaux" onClick={handleLinkClick}>Projets Nationaux</Link>
 
-          {/* Projets Internationaux avec sous-menu */}
+          {/* Projets Internationaux with collapse submenu */}
           <div className="nav-item submenu-toggle" onClick={toggleSubmenu}>
             <span>Projets Internationaux</span>
             <span className={`arrow ${submenuOpen ? 'open' : ''}`}>▾</span>
           </div>
-          <div className={`submenu ${submenuOpen ? 'open' : ''}`} onClick={stopPropagation}>
-            <Link to="/bengladesh" onClick={handleLinkClick}>Bengladesh</Link>
-            <Link to="/projets-internationaux/afrique" onClick={handleLinkClick}>Afrique</Link>
-            <Link to="/projets-internationaux/ameriques" onClick={handleLinkClick}>Amériques</Link>
-            {/* Ajoutez d'autres sous-liens si nécessaire */}
+          <div className={`submenu ${submenuOpen ? 'open' : ''}`}>
+            <Link to="/bangladesh" onClick={handleLinkClick}>Bangladesh</Link>
+            <Link to="/asie" onClick={handleLinkClick}>Asie</Link>
+            <Link to="/ameriques" onClick={handleLinkClick}>Amériques</Link>
           </div>
 
           <Link to="/about" onClick={handleLinkClick}>À propos</Link>
@@ -128,3 +131,8 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+
+

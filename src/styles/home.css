@@ -90,7 +90,7 @@
   align-items: center;
   cursor: pointer;
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: bold;
 }
 .submenu-toggle .arrow {
   transition: transform 0.3s ease;
@@ -191,6 +191,10 @@
   background-color: #d21268;
 }
 
+.title-iftar {
+  display: flex;
+  justify-content: center;
+}
 
 
 

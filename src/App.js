@@ -13,7 +13,7 @@ import Home from './pages/Home';
 import Maraudes from './pages/Maraudes';
 import ColisAlimentaires from './pages/ColisAlimentaires';
 import ProjetsNationaux from './pages/ProjetsNationaux';
-import Bengladesh from './pages/Bengladesh';
+import Bangladesh from './pages/Bangladesh';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
@@ -31,7 +31,7 @@ export default function App() {
           <Route path="/maraudes" element={<Maraudes />} />
           <Route path="/colis-alimentaires" element={<ColisAlimentaires />} />
           <Route path="/projets-nationaux" element={<ProjetsNationaux />} />
-          <Route path="/bengladesh" element={<Bengladesh />} />
+          <Route path="/bangladesh" element={<Bangladesh />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
